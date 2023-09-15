@@ -1,53 +1,279 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" type="text/css" href="website/style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/regular.js" integrity="sha384-V+AkgA1cZ+p3DRK63AHCaXvO68V7B5eHoxl7QVN21zftbkFn/sGAIVR7vmQL3Zhp" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/brands.js" integrity="sha384-VLgz+MgaFCnsFLiBwE3ItNouuqbWV2ZnIqfsA6QRHksEAQfgbcoaQ4PP0ZeS0zS5" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/fontawesome.js" integrity="sha384-treYPdjUrP4rW5q82SnECO7TPVAz4bpas16yuE9F5o7CeBn2YYw1yr5oC8s8Mf8t" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <title>EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</title>
-  </head>
-  <body>
-    <div id="container">
-      <div class="banner">
-        <div class="banner-text">
-          <h1 class="title">EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</h1>
-          <h2 class="author">
-            <a href="" target="_blank">Jayaram&nbsp;Reddy</a><sup>1</sup>,
-            <a href="" target="_blank">Vishal&nbsp;Mandadi</a><sup>1</sup>,
-            <a href="" target="_blank">Kallol&nbsp;Saha</a><sup>1</sup>,
-            <a href="" target="_blank">Ajit&nbsp;Srikanth</a><sup>1</sup>,
-          </h2>
-          <h2 class="author">
-            <a href="" target="_blank">Bipasha&nbsp;Sen</a><sup>1,2</sup>,
-            <a href="" target="_blank">Aditya&nbsp;Agarwal</a><sup>1,2</sup>,
-            <a href="" target="_blank">Arun&nbsp;Sing</a><sup>3</sup>,
-            <a href="" target="_blank">Madhava&nbsp;Krishna</a><sup>1</sup>,
-          </h2>
-          <p class="institutions"><sup>1</sup>Robotic&nbsp;Research&nbsp;Center,&nbsp;IIIT Hyderabad, <sup>2</sup>Massachusetts&nbsp;Institute&nbsp;of&nbsp;Technology , <sup>3</sup>University&nbsp;of&nbsp;Tartu</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="EDMP">
+  <meta name="keywords" content="EDMP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EDMP</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="website/css/bulma.min.css">
+  <link rel="stylesheet" href="website/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="website/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="website/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="website/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="website/js/fontawesome.all.min.js"></script>
+  <script src="website/js/bulma-carousel.min.js"></script>
+  <script src="website/js/bulma-slider.min.js"></script>
+  <script src="website/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">EDPM: <br> Ensemble-of-costs-guided Diffusion for Motion Planning</h1>
+
+          <div class="is-size-8 publication-authors">
+            <span class="author-block">
+              <a href="" target="_blank">Jayaram&nbsp;Reddy*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="" target="_blank">Vishal&nbsp;Mandadi*</a><sup>1</sup>, </span>
+            </span>
+            <span class="author-block">
+              <a href="" target="_blank">Kallol&nbsp;Saha*</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="" target="_blank">Ajit&nbsp;Srikanth</a><sup>1</sup>,
+            </span>
+            
+            <span class="author-block">
+              <a href="" target="_blank">Bipasha&nbsp;Sen</a><sup>1,2</sup>,
+            </span>
+
+            <span class="author-block">
+              <a href="" target="_blank">Aditya&nbsp;Agarwal</a><sup>1,2</sup>,
+            </span>
+
+            <span class="author-block">
+              <a href="" target="_blank">Arun&nbsp;Singh</a><sup>3</sup>,
+            </span>
+
+            <span class="author-block">
+              <a href="" target="_blank">Madhava&nbsp;Krishna</a><sup>1</sup>,
+            </span>
+
+          </div>
+
+          <div class="is-size-9 publication-authors">
+            <span class="author-block"><sup>1</sup>Robotic&nbsp;Research&nbsp;Center&nbsp;IIIT Hyderabad, <sup>2</sup>Massachusetts&nbsp;Institute&nbsp;of&nbsp;Technology , <sup>3</sup>University&nbsp;of&nbsp;Tartu </span>
+            <!-- <span class="author-block"><sup>2</sup>Cornell Tech, Cornell University &nbsp; </span> -->
+          </div>
+
+          <h1 style="font-size:16px;font-weight:bold">ICRA 2024 ( )</h1>
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+<!--               <span class="link-block">
+                <a href="static/pdfs/dynibar.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="link"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#overview_video"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Supp Link. -->
+              <span class="link-block">
+                <a href="suppliments?"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supp</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+            </div>
+
+          </div>
         </div>
       </div>
-      <div id="links">
-        <a class="link-button" href="" target="_blank">Paper</a>
-        <a class="link-button" href="" target="_blank">Code</a>
-        <a class="link-button" href="" target="_blank">Data</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <center>
+      <video id="teaser" autoplay muted loop playsinline controls width="99%">
+        <source src="videos/teaser.mp4" type="video/mp4">
+      </video>
+      </center>
+      <h3 class="subtitle has-text-centered">
+        <font size="-1">
+        <span class="dnerf"> </span> 
+        teaser vid context  aesddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeddddddddddddddddddddddddddddddddddddddddd
+        </font>
+      </h3>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body nopadding">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="450px" width="auto">
+            <source src="videos/parkour-2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="450px" width="auto">
+            <source src="static/videos/mom-spin.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="450px" width="auto">
+            <source src="static/videos/cat-walk.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="450px" width="auto">
+            <source src="static/videos/girl-dog-running.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="450px" width="auto">
+            <source src="static/videos/kid-dog.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+          </video>
+        </div>
+        </div>
       </div>
-      <!--<div id="cover-image"></div>-->
-      <div id="cover-wrapper">
-        <img src="static/cover_split.png", alt="alt of cover img" id="cover-image"></img>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body nopadding">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="360px">
+            <source src="static/videos/playground-full.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="360px">
+            <source src="static/videos/balloon1-full.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="360px">
+            <source src="static/videos/umbrella_full.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="360px">
+            <source src="static/videos/truck-full.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="360px">
+            <source src="static/videos/balloon2-full.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay playsinline controls muted loop height="360px">
+            <source src="static/videos/skating-full.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+          </video>
+        </div>
+
       </div>
-      <div class="line"></div>
-      <div class="section">
-        <h3>Abstract</h3>
-        <p>Classical motion planning for robotic manipulation includes a set of general algorithms that aim to minimize
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Classical motion planning for robotic manipulation includes a set of general algorithms that aim to minimize
             a scene-specific cost of executing a given plan to generate a
             potentially valid collision-free trajectory. This approach offers
             remarkable adaptability, as they can be directly used for any
@@ -72,36 +298,170 @@
             the success rate compared to classical planners. As we show
             in our experiments, EDMP outperforms SOTA deep-learning-
             based methods in most cases while retaining the generalization
-            capabilities primarily associated with classical planners</p>
-      </div>
-      <div class="line"></div>
-
-      <div class="section">
-        <div class="video-wrapper">
-          <div class="slide">
-            <iframe class="youtube-video" src="vid src" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="video-wrapper">
-          <div class="slide">
-            <iframe class="youtube-video" src="vid2 src" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+            capabilities primarily associated with classical planners
+          </p>
         </div>
       </div>
+    </div>
+    <!--/ Abstract. -->
 
-      <div class="line"></div>
+<!-- <div align="center" style="margin-top:80px;" style="margin-bottom:120px;">
+<img style='height: auto; width: 75%; object-fit: contain' src="static/images/overview.png" alt="overview_image">
+</div>  -->
 
-      <div class="section" id="acknowledgements">
-        <h3>Acknowledgements</h3>
-        <p> In the shadowy depths of academia, we offer our 'special' acknowledgment to Jayaram. Their contributions to this research paper were, shall we say, truly distinctive. Jayaram's ability to keep us guessing about the direction of our work was like a never-ending thriller novel - you never quite knew what plot twist was coming next.
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <a id="overview_video"></a>
+          <iframe src="youtube.com" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <!--/ Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-3">Acknowledgements</h3>
+        <div class="content has-text-justified">
+          <p>
+            In the shadowy depths of academia, we offer our 'special' acknowledgment to Jayaram. Their contributions to this research paper were, shall we say, truly distinctive. Jayaram's ability to keep us guessing about the direction of our work was like a never-ending thriller novel - you never quite knew what plot twist was coming next.
 
             Jayaram's unique interpretation of research concepts often left us pondering the mysteries of the universe, or at least the mysteries of their thought process. It's not every day you encounter a collaborator who can turn a straightforward discussion into a dark and twisted intellectual journey.
             
-            While our understanding of the universe may forever be altered after working with Jayaram, we can't deny that they added an element of dark humor to our academic pursuits. To Jayaram, for keeping us entertained and challenged, we raise a metaphorical toast (and perhaps a flashlight) in your honor
-        </p>
+            While our journey with Jayaram might have been akin to a wild rollercoaster ride through academia's haunted mansion, we can't help but appreciate the unconventional charm they brought to our research endeavors.. To Jayaram, for keeping us entertained and challenged, we raise a metaphorical toast (and perhaps a flashlight) in your honor
+          </p>
+        </div>
       </div>
-      <div class="section" id="footer">
-      </div>
+    </div>
+
   </div>
-  </body>
+
+</section>
+
+ <br>
+<!-- 
+<section>
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3"> More Results</h2>
+</div>
+<br>
+
+<div id="wrapper" style="text-align:center;"> 
+    <video autoplay controls muted loop playsinline id="result_video_side" height="450px" width="auto" width="auto" > 
+        <source type="video/mp4" src="static/videos/2558_side-0-1.mp4" /> 
+    </video>
+
+    <video autoplay controls muted loop playsinline id="result_video_side"> 
+        <source type="video/mp4" src="static/videos/000654_side-0-1.mp4" /> 
+    </video>
+    <video  autoplay controls muted loop playsinline id="result_video_side"> 
+        <source type="video/mp4" src="static/videos/000242_side-0-1.mp4" /> 
+    </video>
+
+    <div class="clear"></div>
+Tracking camera motion (horizontal) 
+</div>
+
+<br>
+
+<div id="wrapper" style="text-align:center;  padding: 2em 0;"> 
+    <video  autoplay controls muted loop playsinline id="result_video_updown"> 
+        <source type="video/mp4" src="static/videos/000679_up-down-0-1.mp4" /> 
+    </video>
+
+    <video autoplay controls muted loop playsinline id="result_video_updown"> 
+        <source type="video/mp4" src="static/videos/5428_up-down-0-1.mp4" /> 
+    </video>
+
+    <video  autoplay controls muted loop playsinline id="result_video_updown"> 
+        <source type="video/mp4" src="static/videos/000350_up-down-0-1.mp4" /> 
+    </video>
+
+    <div class="clear"></div> 
+
+Tracking camera motion (vertical) 
+</div>
+
+<br>
+
+<div id="wrapper" style="text-align:center;"> 
+    <video  autoplay controls muted loop playsinline id="result_video_zooming"> 
+        <source type="video/mp4" src="static/videos/zoom-in_000204-0-1.mp4" /> 
+    </video>
+
+    <video autoplay controls muted loop playsinline id="result_video_zooming"> 
+        <source type="video/mp4" src="static/videos/zoom-in_0161-0-1.mp4" /> 
+    </video>
+
+    <video  autoplay controls muted loop playsinline id="result_video_zooming"> 
+        <source type="video/mp4" src="static/videos/zoom-in_000304-0-1.mp4" /> 
+    </video>
+
+    <div class="clear"></div> 
+
+Zooming-In camera motion 
+</div>
+</section>
+
+<br>
+<br>
+
+<section>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3"> Failure Cases</h2>
+    </div>
+<br>
+    <div id="wrapper" style="text-align:center;"> 
+    <video  autoplay controls muted loop playsinline id="failure_video"> 
+        <source type="video/mp4" src="static/videos/failure1.mp4" /> 
+    </video>
+&nbsp;&nbsp;
+    <video  autoplay controls muted loop playsinline id="failure_video"> 
+        <source type="video/mp4" src="static/videos/failure2.mp4" /> 
+    </video>
+
+    <div class="clear"></div> 
+Our method cannot handle motions that are too large/challenging, and doesn't work well with incorrectly estimated monocular depths.
+
+</div>
+</section> -->
+
+
+<!-- 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@{li2022_infinite_nature_zero,
+  title     = {DynIBaR: Learning Perpetual View Generation of Natural Scenes from Single Images},
+  author    = {Li, Zhengqi and Wang, Qianqian and Snavely, Noah and Kanazawa, Angjoo},
+  year      = {2022}
+}</code></pre>
+  </div>
+</section> -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+    bibtex goes here 
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div align="center" class="container">
+    <div class="columns is-centered">
+        <div class="content">
+          <!-- <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. -->
+          <br> The source code for this website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+        </div>
+      </div>
+    </div>
+</footer>
+
+</body>
 </html>
