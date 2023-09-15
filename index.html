@@ -1,55 +1,107 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conference Paper Website</title>
-    <link rel="stylesheet" type="text/css" href="website/style.css"> <!-- Add this line to link the CSS -->
-</head>
-<body>
-    <header>
-        <h1>Welcome to the Conference Paper Website</h1>
-        <!-- Add any header content here -->
-    </header>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="website/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/regular.js" integrity="sha384-V+AkgA1cZ+p3DRK63AHCaXvO68V7B5eHoxl7QVN21zftbkFn/sGAIVR7vmQL3Zhp" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/brands.js" integrity="sha384-VLgz+MgaFCnsFLiBwE3ItNouuqbWV2ZnIqfsA6QRHksEAQfgbcoaQ4PP0ZeS0zS5" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/fontawesome.js" integrity="sha384-treYPdjUrP4rW5q82SnECO7TPVAz4bpas16yuE9F5o7CeBn2YYw1yr5oC8s8Mf8t" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="banner">
+        <div class="banner-text">
+          <h1 class="title">EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</h1>
+          <h2 class="author">
+            <a href="" target="_blank">Jayaram&nbsp;Reddy</a><sup>1</sup>,
+            <a href="" target="_blank">Vishal&nbsp;Mandadi</a><sup>1</sup>,
+            <a href="" target="_blank">Kallol&nbsp;Saha</a><sup>1</sup>,
+            <a href="" target="_blank">Ajit&nbsp;Srikanth</a><sup>1</sup>,
+          </h2>
+          <h2 class="author">
+            <a href="" target="_blank">Bipasha&nbsp;Sen</a><sup>1,2</sup>,
+            <a href="" target="_blank">Aditya&nbsp;Agarwal</a><sup>1,2</sup>,
+            <a href="" target="_blank">Arun&nbsp;Sing</a><sup>3</sup>,
+            <a href="" target="_blank">Madhava&nbsp;Krishna</a><sup>1</sup>,
+          </h2>
+          <p class="institutions"><sup>1</sup>Robotic&nbsp;Research&nbsp;Center,&nbsp;IIIT Hyderabad, <sup>2</sup>Massachusetts&nbsp;Institute&nbsp;of&nbsp;Technology , <sup>2</sup>University&nbsp;of&nbsp;Tartu</p>
+        </div>
+      </div>
+      <div id="links">
+        <a class="link-button" href="" target="_blank">Paper</a>
+        <a class="link-button" href="" target="_blank">Code</a>
+        <a class="link-button" href="" target="_blank">Data</a>
+      </div>
+      <!--<div id="cover-image"></div>-->
+      <div id="cover-wrapper">
+        <img src="static/cover_split.png", alt="alt of cover img" id="cover-image"></img>
+      </div>
+      <div class="line"></div>
+      <div class="section">
+        <h3>Abstract</h3>
+        <p>Classical motion planning for robotic manipulation includes a set of general algorithms that aim to minimize
+            a scene-specific cost of executing a given plan to generate a
+            potentially valid collision-free trajectory. This approach offers
+            remarkable adaptability, as they can be directly used for any
+            new scene without needing specific training datasets. However,
+            without a prior understanding of what diverse valid trajectories
+            are and without specially designed cost functions for a given
+            scene, the overall solutions tend to have low success rates.
+            While deep-learning-based algorithms tremendously improve
+            success rates, they are much harder to adopt without specialized
+            training datasets. We propose EDMP, an Ensemble-of-costs-
+            guided Diffusion for Motion Planning that aims to combine the
+            strengths of classical and deep-learning-based motion planning.
+            Our diffusion-based network is trained on a set of diverse
+            general valid trajectories enabling the model to implicitly learn
+            the properties of a valid trajectory. Like classical planning, for
+            any new scene at the time of inference, we compute collision
+            costs and incorporate this cost at each timestep of the diffusion
+            network to generate valid collision-free trajectories. Instead of
+            a single collision cost that may be insufficient in capturing
+            diverse cues across scenes, we use an ensemble of collision
+            costs to guide the diffusion process, significantly improving
+            the success rate compared to classical planners. As we show
+            in our experiments, EDMP outperforms SOTA deep-learning-
+            based methods in most cases while retaining the generalization
+            capabilities primarily associated with classical planners</p>
+      </div>
+      <div class="line"></div>
 
-    <nav>
-        <!-- Add navigation links if needed -->
-    </nav>
+      <div class="section">
+        <div class="video-wrapper">
+          <div class="slide">
+            <iframe class="youtube-video" src="vid src" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="video-wrapper">
+          <div class="slide">
+            <iframe class="youtube-video" src="vid2 src" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
 
-    <main>
-        <section>
-            <h2>Abstract</h2>
-            <p>Your conference paper abstract goes here.</p>
-        </section>
+      <div class="line"></div>
 
-        <section>
-            <h2>Authors</h2>
-            <ul>
-                <li>Author 1</li>
-                <li>Author 2</li>
-                <!-- Add more authors if needed -->
-            </ul>
-        </section>
+      <div class="section" id="acknowledgements">
+        <h3>Acknowledgements</h3>
+        <p> In the shadowy depths of academia, we offer our 'special' acknowledgment to Jayaram. Their contributions to this research paper were, shall we say, truly distinctive. Jayaram's ability to keep us guessing about the direction of our work was like a never-ending thriller novel - you never quite knew what plot twist was coming next.
 
-        <section>
-            <h2>Download</h2>
-            <p>You can download the full paper <a href="link-to-your-paper.pdf">here</a>.</p>
-        </section>
-
-        <section>
-            <h2>Citation</h2>
-            <p>Provide the citation information for your paper.</p>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>If you have any questions or need further information, please contact us at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Conference Paper Website</p>
-        <!-- Add any footer content here -->
-    </footer>
-</body>
+            Jayaram's unique interpretation of research concepts often left us pondering the mysteries of the universe, or at least the mysteries of their thought process. It's not every day you encounter a collaborator who can turn a straightforward discussion into a dark and twisted intellectual journey.
+            
+            While our understanding of the universe may forever be altered after working with Jayaram, we can't deny that they added an element of dark humor to our academic pursuits. To Jayaram, for keeping us entertained and challenged, we raise a metaphorical toast (and perhaps a flashlight) in your honor
+        </p>
+      </div>
+      <div class="section" id="footer">
+      </div>
+  </div>
+  </body>
 </html>
